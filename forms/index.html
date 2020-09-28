@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Разнообразие форм</title>
+</head>
+<body>
+    <form id="my_form" onsubmit="alert(decodeURI(new URLSearchParams(Array.from(new FormData(document.getElementById('my_form')))).toString()));return false;">
+
+        <fieldset>
+            <legend>Данные пользователя</legend>
+            <label for="read" >Текст без редактирования:</label><br>
+            <input type="text" name="read" id="read" value="Можно читать" readonly><br><br>
+            <label for="dis">Поле неактивно:</label><br>
+            <input type="text" name="dis" id="dis" value="Здесь ничего не нажмешь" disabled><br><br>
+            <label for="nikname">Ваше имя на старославянском языке:</label><br>
+            <input type="text" name="nikname" id="nikname" placeholder="James Bond" required><br><br>
+            <label for="email">Email:</label><br>
+            <input type="email" name="email" id="email" placeholder="example@domain.com" required><br><br>
+            <label for="pass">Пароль:</label><br>
+            <input type="password" name="password" id="pass"><br><br>
+            <label for="date">Самый лучший день:</label><br>
+            <input type="date" name="date" id="date"><br><br>
+            <label for="number">Ваш возраст:</label><br>
+            <input type="number" name="number" id="number"><br><br>
+            <label>Выберите пол:</label><br>
+            <label><input type="radio" name="gender" value="male">Мужчина</label>
+            <label><input type="radio" name="gender" value="female">Женщина</label>
+            <label><input type="radio" name="gender" value="notset">Другое</label> <br><br>         
+            <label>Что вы лучше всего умеете делать?</label><br>
+            <label for="breath"><input type="checkbox" name="breath" id="breath">Дышать</label>
+            <label for="walk"><input type="checkbox" name="walk" id="walk">Ходить</label>
+            <label for="sleep"><input type="checkbox" name="sleep" id="sleep">Спать</label>
+            <label for="eat"><input type="checkbox" name="eat" id="eat">Кушать</label>
+        </fieldset>
+        <fieldset>
+            <legend>Другие типы</legend>
+            <label>Ваш любимый цвет тротуарной плитки:</label><br>
+            <input type="color"><br><br>
+            <label for="tel">Номер телефона:</label><br>
+            <input type="tel" name="tel" id="tel"><br><br>
+            <label for="time">На сколько стоит ваш будильник:</label><br>
+            <input type="time" name="time" id="time"><br><br>
+            <label for="url">Ваш любимый онлайн кинотеатр:</label><br>
+            <input type="url" name="url" id="url" placeholder="http://kino.com" required title="Введите URL"><br><br>
+            <label for="range">На сколько вы уверены в себе от 1 до 10?</label><br>
+            <input type="range" name="range" id="range" min="1" max="10"><br><br>
+            <label for="image">Скиньте фотку</label><br>
+            <input type="file" id="image"><br><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Еще немного форм</legend>
+            <label for="mc">За кого играете в Mortal Combat?</label><br>
+            <select name="hero" id="mc">
+                <option disabled selected>Choose your destiny</option>
+                <option value="subz">Sub Zero</option>
+                <option value="scorp">Scorpion</option>
+                <option value="son">Sonia</option>
+                <option value="raiden">Raiden</option>
+                <option value="mot">Motaro</option>
+            </select><br><br>
+            <label>Любимая еда:</label><br>
+           <select size="6" multiple>
+                <optgroup label="Фастфуд">
+                    <option value="f1">Шавуха</option>
+                    <option value="f2">Хот-дог</option>
+                    <option value="f3">Бургер</option>
+                    <option value="f4">Картошка фри</option>
+                </optgroup>
+
+                <optgroup label="Домашняя еда">
+                    <option value="e1">Борщик</option>
+                    <option value="e2">Пюрешка</option>
+                    <option value="e3">Голубцы</option>
+                    <option value="e4">Суп</option>
+                </optgroup>
+             </select><br><br>
+             <label for="tarea">Напишите отзыв</label><br>
+             <textarea name="comment" id="tarea" cols="50" rows="7" placeholder="Поле для отзыва">
+             </textarea>
+        </fieldset>
+        <fieldset>
+            <legend>Кнопочки</legend>
+            <input type="submit" value="Отправить">
+            <input type="reset" value="Сбросить">
+            <button>Кнопка</button>
+            <button disabled>Запавшая кнопочка</button>
+        </fieldset>
+    </form>
+</body>
+</html>
