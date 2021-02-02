@@ -1,0 +1,27 @@
+{
+    "id_1": {
+        "name": "Julia Worth",
+        "prof": "Physical Education",
+        "photo": "./teachers/julia.jpg"
+    },
+    "id_2": {
+        "name": "T. Durden",
+        "prof": "Philosophy",
+        "photo": "./teachers/tyler.jpg"
+    },
+    "id_3": {
+        "name": "John Conor",
+        "prof": "Computer Science",
+        "photo": "./teachers/john.jpg"
+    },
+    "id_4": {
+        "name": "Emma Smith",
+        "prof": "Marketing",
+        "photo": "./teachers/emma.jpg"
+    },
+    "id_5": {
+        "name": "Adam Fisher",
+        "prof": "Mathematics",
+        "photo": "./teachers/adam.jpg"
+    }
+}

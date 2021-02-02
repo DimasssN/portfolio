@@ -1,0 +1,20 @@
+{
+    "id_1": {
+        "image": "./news/news_1.jpg",
+        "head": "Meet Our Graduates!",
+        "text": "It's a good day to show us, how they celebrate!",
+        "date": "19 June 2020"
+    },
+    "id_2": {
+        "image": "./news/news_2.jpg",
+        "head": "New course in school",
+        "text": "Look what we have here! It's a brand new discipline in our school.",
+        "date": "21 June 2020"
+    },
+    "id_3": {
+        "image": "./news/news_3.jpg",
+        "head": "Book day",
+        "text": "Most of people were a students, but only...",
+        "date": "23 June 2020"
+    }
+}
