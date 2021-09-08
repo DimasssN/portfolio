@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/vanilla-toast.css">
+    <link rel="stylesheet" href="assets/css/custom.min.css">
+    <title>Seek Films</title>
+</head>
+<body>
+    <div id="app">
+        <nav class="navbar fixed-top navbar-expand-sm bg-dark bg-gradient">
+            <div class="container">
+                <a href="" class="navbar-brand">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" fill="currentColor" class="bi bi-camera-reels" viewBox="0 0 16 16">
+                        <path d="M6 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM1 3a2 2 0 1 0 4 0 2 2 0 0 0-4 0z"/>
+                        <path d="M9 6h.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 7.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 16H2a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h7zm6 8.73V7.27l-3.5 1.555v4.35l3.5 1.556zM1 8v6a1 1 0 0 0 1 1h7.5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1z"/>
+                        <path d="M9 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM7 3a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+                      </svg>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" 
+                aria-controls="navbarContent" aria-expanded="false">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav me-auto mb-2">
+                        <li class="nav-item">
+                            <a href="" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="javascript:void(0)"
+                            @click="showFav=!showFav"
+                            class="nav-link">
+                               <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                                  </svg>
+                               </span> Favorites</a>
+                        </li>
+                    </ul>
+                    <form action="" class="d-flex col-md-10">
+                        <div class="col-md-6 me-3">
+                            <input type="text" class="form-control" placeholder="Enter movie title" v-model="search_query">
+                        </div>
+                        <div class="col-md-4">
+                            <button class="btn btn-outline-primary" id="btn-search" type="button" v-on:click="searchMovie">
+                                <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                              </svg>
+                            </span> 
+                            Search</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <div class="container pt-5">
+            <div class="row pt-5">
+                <div class="col-md-12">
+                        <a href="javascript:void(0)" class="btn btn-primary me-2" v-on:click="toggleView(true)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-grid" viewBox="0 0 16 16">
+                                <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
+                              </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="btn btn-primary" v-on:click="toggleView(false)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                              </svg>
+                        </a>
+                </div>
+            </div>
+            <div id="movie-list" class="d-flex justify-content-between pt-4 flex-wrap" :class="blocksView?'blocks':'rows'">
+
+                <movie_item v-for="movie in movieList"
+                            :item="movie"></movie_item>
+            </div>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center" id="pagination">
+                
+                </ul>
+              </nav>            
+        </div>
+        <div id="fav-list" 
+        class="animate__animated"
+        :class="showFav?'animate__backOutLeft':'animate__backInLeft'">
+                <div class="list-group-item col-md-12 d-flex justify-content-between">
+                        <span class="fw-bolder fs-2">Favorites</span>
+                        <button type="button" class="btn btn-close border border-dark" @click="showFav=!showFav"></button>
+                    </div>
+                <ul class="list-group">
+                    
+                    <fav_item v-for="movie in favorites"
+                            :item="movie"
+                            class="col-md-12">
+                </fav_item>
+                </ul>
+            </div>
+        <div class="modal fade" 
+            :class="{'show': showModal}" 
+            @click="toggleModalDetail(show)" 
+            id="exampleModal" 
+            tabindex="-1" 
+            aria-labelledby="exampleModalLabel" 
+            aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Movie Details</h5>
+                  <button type="button" class="btn-close" @click="toggleModalDetail(show)" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                 <div class="row">
+                     <div class="col-md-4">
+                         <img :src="movie_info.Poster" :alt="movie_info.Title">
+                     </div>
+                     <div class="col-md-8">
+                         <h4>{{movie_info.Title}}</h4>
+                         <p><strong>Release: </strong>{{movie_info.Released}}</p>
+                         <p><strong>IMDB: </strong>{{movie_info.imdbRating}}/10</p>
+                         <p><strong>Genre: </strong>{{movie_info.Genre}}</p>
+                         <p><strong>Director: </strong>{{movie_info.Director}}</p>
+                         <p><strong>Actors: </strong>{{movie_info.Actors}}</p>
+                         <p><strong>Description: </strong>{{movie_info.Plot}}</p>
+                     </div>
+                 </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" @click="toggleModalDetail(show)">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+        <template id="movie_item">
+            <div class="card my-2 shadow rounded">
+                    <img :src="(item.Poster=='N/A')?'https://via.placeholder.com/200x300?text=No+Poster' : item.Poster" class="card-img-top" :alt="item.Title" @click="getDetail(item.imdbID)">
+                    <div class="card-body justify-content-between">
+                      <h5 class="card-title">{{item.Title}}</h5>
+                      <p class="card-text">{{item.Year}}
+                          <a href="javascript:void(0)" id="fav_btn" class="btn btn-warning btn-success pb-2" @click="toggleFavorites(item)">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                                  </svg>
+                               </span>
+                          </a>
+                      </p>
+                      <a href="javascript:void(0)" class="btn btn-primary" @click="getDetail(item.imdbID)">Detail</a>
+                    </div>
+                </div>
+        </template>
+        <template id="fav_item">
+                    <li class="list-group-item">
+                        <img :src="item.Poster" style="width: 80px; height: 80px;" class="rounded-circle float-start me-2" :alt="item.Title" @click="getDetail(item.imdbID)">
+                        <h5 class="card-title">{{item.Title}}</h5>
+                        <a href="javascript:void(0)" @click="getDetail(item.imdbID)" class="btn btn-info">Show Details</a>
+                        <a href="javascript:void(0)" class="btn btn-success pb-2" @click="toggleFavorites(item)">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                                  </svg>
+                               </span>
+                          </a>
+                    </li>
+        </template>
+
+
+    <!-- <script src="assets/js/vue.min.js"></script> -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="assets/js/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="assets/js/vanilla-toast.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
