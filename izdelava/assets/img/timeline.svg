@@ -1,0 +1,55 @@
+<svg id="Timeline" xmlns="http://www.w3.org/2000/svg" width="169" height="632" viewBox="0 0 169 632">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #313131;
+        stroke-width: 1px;
+        fill-rule: evenodd;
+      }
+
+      .cls-1, .cls-3, .cls-4 {
+        stroke: #303030;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
+        stroke-linejoin: round;
+      }
+
+      .cls-2, .cls-4 {
+        fill: #efc478;
+      }
+
+      .cls-2, .cls-5 {
+        stroke: #181818;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5 {
+        stroke-width: 4px;
+        mix-blend-mode: multiply;
+      }
+
+      .cls-3 {
+        fill: #76bfea;
+      }
+
+      .cls-5 {
+        fill: #f1d19a;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="M732.016,957h3V1580.61h-3V957Z" transform="translate(-649 -954.5)"/>
+  <path id="Shape_12_copy" data-name="Shape 12 copy" class="cls-1" d="M761.151,1551.68l2.119,2.12-29.676,29.68-2.118-2.12Z" transform="translate(-649 -954.5)"/>
+  <path id="Shape_12_copy_2" data-name="Shape 12 copy 2" class="cls-1" d="M705.6,1551.68l-2.119,2.12,29.675,29.68,2.119-2.12Z" transform="translate(-649 -954.5)"/>
+  <path class="cls-1" d="M733,1047.09v-1.69H662v1.69h71Z" transform="translate(-649 -954.5)"/>
+  <path id="Shape_20_copy_2" data-name="Shape 20 copy 2" class="cls-1" d="M733,1233.09v-1.69H662v1.69h71Z" transform="translate(-649 -954.5)"/>
+  <path id="Shape_20_copy" data-name="Shape 20 copy" class="cls-1" d="M805,1140.09v-1.69H734v1.69h71Z" transform="translate(-649 -954.5)"/>
+  <path id="Shape_20_copy_4" data-name="Shape 20 copy 4" class="cls-1" d="M805,1314.09v-1.69H734v1.69h71Z" transform="translate(-649 -954.5)"/>
+  <circle id="Shape_29_copy" data-name="Shape 29 copy" class="cls-2" cx="8.047" cy="91.235" r="3.359"/>
+  <circle id="Shape_29_copy_4" data-name="Shape 29 copy 4" class="cls-3" cx="161.047" cy="358.235" r="3.359"/>
+  <path id="Shape_20_copy_5" data-name="Shape 20 copy 5" class="cls-1" d="M805,1501.09v-1.69H734v1.69h71Z" transform="translate(-649 -954.5)"/>
+  <circle id="Shape_29_copy_6" data-name="Shape 29 copy 6" class="cls-4" cx="161.047" cy="545.235" r="3.359"/>
+  <circle id="Shape_29_copy_2" data-name="Shape 29 copy 2" class="cls-3" cx="8.047" cy="277.235" r="3.359"/>
+  <path id="Shape_20_copy_3" data-name="Shape 20 copy 3" class="cls-1" d="M733,1408.09v-1.69H662v1.69h71Z" transform="translate(-649 -954.5)"/>
+  <circle id="Shape_29_copy_5" data-name="Shape 29 copy 5" class="cls-2" cx="8.047" cy="452.235" r="3.359"/>
+  <circle id="Shape_29_copy_3" data-name="Shape 29 copy 3" class="cls-5" cx="161.047" cy="184.235" r="3.359"/>
+</svg>
